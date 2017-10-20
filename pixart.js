@@ -11,5 +11,10 @@ $color_button.on('click', function(event) {
 
 var $body = $('body')
 for (i = 0; i < 1000 ; i++) {
-  $body.append( '<div class="squares"></div>');
+  $body.append( '<div class="square"></div>');
 }
+
+var $squares_all = $('.square')
+$squares_all.on('click', function(event){
+  $(event.target).css({'background-color': 'green'});
+})
