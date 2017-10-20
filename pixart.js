@@ -18,27 +18,37 @@ for (i = 0; i < 1000 ; i++) {
 
 var $squares_all = $('.square')
 $squares_all.on('mouseover', function(event){
-  $(event.target).css({'background-color': $color_input.val()
+  $(event.target).css({
+    'background-color': $color_input.val()
 });
 })
 
 // DID NOT FINISH THE BELOW
 
-$color_button.on('click', function(event){
-  debugger
+$movie_button.on('click', function(event){
   event.preventDefault();
 // EXAMPLE: http://omdbapi.com/?t=Jaws&apikey=2f6435d9
   var options = {
     url: 'http://omdbapi.com/',
-    method: 'post',
+    method: 'get',
     data: {
       t: $movie_input.val(),
       apikey: '2f6435d9'
     }
   }
   var appendComment = function(response) {
-    console.log(response);
-    // img- response['Poster']
+
+    console.log(response.Poster);
+    $poster_url = response.Poster
+    $poster_url = 'url(' + String($poster_url) + ')'
+    console.log($poster_url);
+
+    var $squares_all = $('.square')
+
+    $squares_all.on('mouseover', function(event){
+      $(event.target).css('background', $poster_url)
+    });
+
   }
 
   $.ajax(options).done(appendComment);
