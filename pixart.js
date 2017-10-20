@@ -1,11 +1,15 @@
-$color_button = $('#set-color');
-$input = $('#color-field');
-$brush_box = $('.brush');
-
-
+var $color_button = $('#set-color');
+var $input = $('#color-field');
+var $brush_box = $('.brush');
 
 $color_button.on('click', function(event) {
   event.preventDefault();
-  $brush_box.css({'background-color': $input.val()
-})
+  $brush_box.css({
+    'background-color': $input.val()
+  })
 });
+
+var $body = $('body')
+for (i = 0; i < 1000 ; i++) {
+  $body.append( '<div class="squares"></div>');
+}
