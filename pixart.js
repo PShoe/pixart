@@ -16,5 +16,6 @@ for (i = 0; i < 1000 ; i++) {
 
 var $squares_all = $('.square')
 $squares_all.on('click', function(event){
-  $(event.target).css({'background-color': 'green'});
+  $(event.target).css({'background-color': $input.val()
+});
 })
