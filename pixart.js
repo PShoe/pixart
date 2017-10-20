@@ -15,7 +15,7 @@ for (i = 0; i < 1000 ; i++) {
 }
 
 var $squares_all = $('.square')
-$squares_all.on('click', function(event){
+$squares_all.on('mouseover', function(event){
   $(event.target).css({'background-color': $input.val()
 });
 })
